@@ -4,8 +4,24 @@
         |
         <router-link to="/about">About</router-link>
     </div>
-    <router-view/>
+    <AlphabetNavigation/>
+    <router-view :key="$route.name + ($route.params.tab || '')"/>
 </template>
+
+<script>
+
+import AlphabetNavigation from '@/components/AlphabetNavigation.vue'
+
+export default {
+    name: 'App',
+    beforeCreate() {
+        this.$store.dispatch('loadContactBook')
+    },
+    components: {
+        AlphabetNavigation
+    }
+}
+</script>
 
 <style lang="scss">
 #app {
