@@ -26,6 +26,41 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+    .alphabetic__link {
+        display: inline-block;
+        border: solid 2px #39485c;
+        border-radius: 50%;
+        height: 32px;
+        width: 32px;
+        line-height: 31px;
+        text-decoration: none;
+        font-weight: bold;
+        margin: 5px;
+        position: relative;
 
+        &:visited {
+            color: inherit;
+        }
+
+        &:hover {
+            background-color: #39485c;
+            color: #FFFFFF;
+        }
+
+        &.router-link-active {
+            background-color: #39485c;
+            color: #FFFFFF;
+            border-color: #64b587;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            left: -5px;
+            right: -5px;
+            top:0;
+            bottom: 0;
+        }
+    }
 </style>

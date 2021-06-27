@@ -10,7 +10,6 @@ export default createStore({
     mutations: {
         setContacts(state, contactBookDada) {
             state.contactBook = contactBookDada
-            console.log(state)
         }
     },
     actions: {
@@ -19,8 +18,7 @@ export default createStore({
 
             axios.get(getters.getContactBookUrl)
                 .then(res => {
-                    console.log(res.data.results)
-                    // commit('setContacts', res.data)
+                    commit('setContacts', res.data.results)
                 })
                 // TODO: Add States Mutations and Components to render Loading and Error situations
                 .catch(error => console.log(error))
@@ -31,7 +29,7 @@ export default createStore({
             return state.initialConfig.userUrl + "/?results=" + state.initialConfig.numberCards
         },
         getContactByLetter: (state) => (letter) => {
-            return state.contactBook.find(contact => contact.name.last[0] === letter.toUpperCase())
+            return state.contactBook.filter(contact => contact.name.last[0] === letter.toUpperCase())
         }
     },
     modules: {
