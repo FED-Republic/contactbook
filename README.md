@@ -1,4 +1,4 @@
-# contactbook
+# Contact book
 
 ## Project setup
 ```
