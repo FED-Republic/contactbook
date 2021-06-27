@@ -19,9 +19,6 @@ export default {
         tabs() {
             return this.$store.state.initialConfig.tabs
         }
-    },
-    created() {
-        // this.$store.dispatch('loadContactBook')
     }
 }
 </script>

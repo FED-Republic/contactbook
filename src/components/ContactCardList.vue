@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="contact-card__list">
         <ContactCard v-for="card in cards" :contactInfo = "card"/>
     </div>
 </template>
@@ -18,6 +18,10 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+    .contact-card__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center
+    }
 </style>
